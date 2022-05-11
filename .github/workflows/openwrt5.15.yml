@@ -16,8 +16,8 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
-  schedule:
-    - cron: 0 18 */3 * *
+  #schedule:
+    #- cron: 0 18 */3 * *
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -123,7 +123,7 @@ jobs:
         rm -rf packages && mkdir packages
         find -name "*esxi-flat.vmdk*" | xargs -i mv -f {} packages
         find -name "*kernel.bin*" | xargs -i mv -f {} packages
-        find -name "*rootfs*" | xargs -i mv -f {} packages
+        #find -name "*rootfs*" | xargs -i mv -f {} packages
         find -name "*.manifest*" | xargs -i mv -f {} packages
         find -name "*vmlinuz*" | xargs -i mv -f {} packages
         find -name "*esxi.vmdk*" | xargs -i mv -f {} packages
