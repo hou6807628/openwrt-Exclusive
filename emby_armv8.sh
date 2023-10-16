@@ -15,12 +15,12 @@ fi
 if [ $2 ]; then	
 	docker run -it --security-opt seccomp=unconfined --rm -v $1:/media -v $2:/etc/xiaoya -e LANG=C.UTF-8  xiaoyaliu/glue /update.sh
 	if [ ! -f $2/emby_server.txt ]; then
-		echo http://172.17.0.1:22439 > $2/emby_server.txt
+		echo http://172.17.0.1:80969 > $2/emby_server.txt
 	fi
 else
 	docker run -it --security-opt seccomp=unconfined --rm -v $1:/media -v /etc/xiaoya:/etc/xiaoya -e LANG=C.UTF-8  xiaoyaliu/glue /update.sh
 	if [ ! -f /etc/xiaoya/emby_server.txt ]; then
-                echo http://172.17.0.1:22439 > /etc/xiaoya/emby_server.txt
+                echo http://172.17.0.1:80969 > /etc/xiaoya/emby_server.txt
         fi
 fi
 
